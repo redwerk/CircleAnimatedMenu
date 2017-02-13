@@ -35,16 +35,13 @@ pod "CircleAnimatedMenu"
 ```
 3) Connect IBOutlet with `CircleAnimatedMenu` in IB.
 
-```swift
-func circleMenu(circleMenu: CircleMenu, willDisplay button: CircleMenuButton, atIndex: Int)
-```
-4) Build array of tuples. Each tuple should contain two String values, first value - image name, second - category text. It can be written in func viewDidLoad.
+4) Build array of tuples. Each tuple should contain two String values, first value - image name, second - section text. It can be written in func viewDidLoad.
 
 ```swift
 testMenu.dataTuple = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
-("link", "LinkedIn"), ("googlePlus", "GooglePlus"), ("github", "GitHub")];
+                      ("link", "LinkedIn"), ("googlePlus", "GooglePlus"), ("github", "GitHub")];
 ```
-5) Set delegate to get index and text selected section.
+5) Set delegate to get index and text of selected section.
 ```swift
 testMenu.delegate = self
 ```
