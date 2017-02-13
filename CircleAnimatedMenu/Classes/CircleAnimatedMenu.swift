@@ -13,7 +13,7 @@ import Foundation
     // MARK: - Public properties
     
     // Inner radius of slices - set this to 0 for "no gap".
-    @IBInspectable public var innerRadius: CGFloat = 50 {
+    @IBInspectable public var innerRadius: CGFloat = 30 {
         didSet {
             var maxInnerRadius = self.frame.size.height > self.frame.size.width - imageSize ?
             self.frame.size.width / 2  - 20 : self.frame.size.height / 2 - 20
@@ -23,7 +23,7 @@ import Foundation
     }
     
     // Outer radius of slices.
-    @IBInspectable public var outerRadius: CGFloat = 60 {
+    @IBInspectable public var outerRadius: CGFloat = 75 {
         didSet {
             var maxOuterRadius = self.frame.size.height > self.frame.size.width ? self.frame.size.width / 2 : self.frame.size.height / 2
             outerRadius = outerRadius > maxOuterRadius ? maxOuterRadius : outerRadius
@@ -186,6 +186,15 @@ import Foundation
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    public init(menuFrame: CGRect, dataArray: [(String, String)]) {
+        
+        dataTuple = dataArray
+        super.init(frame: menuFrame)
+        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(gestureRecognized(gesture:)))
+        self.addGestureRecognizer(gestureRecognizer)
+        update()
     }
     
     open override func awakeFromNib() {
