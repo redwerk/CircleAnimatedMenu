@@ -1,0 +1,16 @@
+PODS:
+  - CircleAnimatedMenu (0.1.0)
+
+DEPENDENCIES:
+  - CircleAnimatedMenu (from `../`)
+
+EXTERNAL SOURCES:
+  CircleAnimatedMenu:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CircleAnimatedMenu: fa903de87152cbb8fe27bfad8b12ec9ee7bdee7b
+
+PODFILE CHECKSUM: ffecaf5e679e73b4c1efced8eb6732c633033eb8
+
+COCOAPODS: 1.2.0.beta.1

@@ -1,0 +1,22 @@
+{
+  "name": "CircleAnimatedMenu",
+  "version": "0.1.0",
+  "summary": "A short description of CircleAnimatedMenu.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Alexandr Honcharenko/CircleAnimatedMenu",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Alexandr Honcharenko": "honcharenko13@redwerk.com"
+  },
+  "source": {
+    "git": "https://github.com/Alexandr Honcharenko/CircleAnimatedMenu.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CircleAnimatedMenu/Classes/**/*"
+}
