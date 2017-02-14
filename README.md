@@ -36,9 +36,6 @@ pod "CircleAnimatedMenu"
 ```
 3) Connect IBOutlet with `CircleAnimatedMenu` in IB.
 
-```swift
-func circleMenu(circleMenu: CircleMenu, willDisplay button: CircleMenuButton, atIndex: Int)
-```
 4) Build array of tuples. Each tuple should contain two String values, first value - image name, second - category text. It can be written in func viewDidLoad.
 
 ```swift
