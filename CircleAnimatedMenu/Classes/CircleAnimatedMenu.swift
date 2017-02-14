@@ -15,7 +15,7 @@ import Foundation
     // Inner radius of menu
     @IBInspectable public var innerRadius: CGFloat = 30 {
         didSet {
-            var maxInnerRadius = self.frame.size.height > self.frame.size.width - imageSize ?
+            let maxInnerRadius = self.frame.size.height > self.frame.size.width - imageSize ?
             self.frame.size.width / 2  - 20 : self.frame.size.height / 2 - 20
             innerRadius = innerRadius > maxInnerRadius ? maxInnerRadius : innerRadius
             update()
@@ -25,7 +25,7 @@ import Foundation
     // Outer radius of menu
     @IBInspectable public var outerRadius: CGFloat = 75 {
         didSet {
-            var maxOuterRadius = self.frame.size.height > self.frame.size.width ? self.frame.size.width / 2 : self.frame.size.height / 2
+            let maxOuterRadius = self.frame.size.height > self.frame.size.width ? self.frame.size.width / 2 : self.frame.size.height / 2
             outerRadius = outerRadius > maxOuterRadius ? maxOuterRadius : outerRadius
             update()
         }
@@ -248,7 +248,7 @@ import Foundation
         for (index, value) in dataTuple.enumerated() {
             
             // init sectionLayer
-            var sectionLayer = CAShapeLayer()
+            let sectionLayer = CAShapeLayer()
             sectionLayer.fillColor = menuFillColor.cgColor
             sectionLayer.strokeColor = sectionsStrokeColor.cgColor
             sectionLayer.lineWidth = menuWidthLine
@@ -322,7 +322,7 @@ import Foundation
     }
     
     fileprivate func highlightDefaultSection() {
-        var highlightedSecttion = sectionLayers[defaulHighlightedtSectionIndex]
+        let highlightedSecttion = sectionLayers[defaulHighlightedtSectionIndex]
         highlightedSecttion.fillColor = highlightedColor.cgColor
         textLayer.string = dataTuple[defaulHighlightedtSectionIndex].1
     }
@@ -331,7 +331,7 @@ import Foundation
         for sectionLayer in sectionLayers {
             self.layer.addSublayer(sectionLayer)
             if !animated {
-                var imageLayerIndex = sectionLayers.index(of: sectionLayer)
+                let imageLayerIndex = sectionLayers.index(of: sectionLayer)
                 sectionLayer.addSublayer(imageLayers[imageLayerIndex!])
             }
         }
@@ -346,7 +346,7 @@ import Foundation
         super.beginTracking(touch, with: event)
         
         let touchPoint = touch.location(in: self)
-        for var shapeLayer in sectionLayers {
+        for shapeLayer in sectionLayers {
             let currentIndex = sectionLayers.index(of: shapeLayer)!
             if ((shapeLayer.path?.contains(touchPoint))! && !(textCircleLayer.path?.contains(touchPoint))!) {
                 if highlightedColors.isEmpty {
@@ -394,7 +394,7 @@ import Foundation
     // MARK: - Helpers
     
     func fillSectionIn(location: CGPoint) {
-        for var shapeLayer in sectionLayers {
+        for shapeLayer in sectionLayers {
             shapeLayer.fillColor = menuFillColor.cgColor
             let currentIndex = sectionLayers.index(of: shapeLayer)!
             if ((shapeLayer.path?.contains(location))! && !(textCircleLayer.path?.contains(location))!) {
@@ -404,12 +404,12 @@ import Foundation
                     let currentText = dataTuple[selectedSectionIndex].1
                     textLayer.string = currentText
                 } else {
-                    var previousIndex = previousIndexes.index(of: currentIndex)
+                    let previousIndex = previousIndexes.index(of: currentIndex)
                     if previousIndex == 1 {
                         selectedSectionIndex = currentIndex
                         let currentText = dataTuple[selectedSectionIndex].1
                         textLayer.string = currentText
-                        var firstElement = previousIndexes.first
+                        let firstElement = previousIndexes.first
                         previousIndexes.removeAll()
                         previousIndexes.append(currentIndex)
                         previousIndexes.append(firstElement!)
@@ -445,7 +445,7 @@ import Foundation
     }
     
     func clearData() {
-        for var shapeLayer in sectionLayers {
+        for shapeLayer in sectionLayers {
             shapeLayer.fillColor = menuFillColor.cgColor
         }
         if highlightedColors.isEmpty {
@@ -499,7 +499,7 @@ extension CircleAnimatedMenu: CAAnimationDelegate {
         
         if anim.value(forKey: "id") as! Int == sectionLayers.count - 1 {
             for sectionLayer in sectionLayers {
-                var imageLayerIndex = sectionLayers.index(of: sectionLayer)
+                let imageLayerIndex = sectionLayers.index(of: sectionLayer)
                 imageLayers[imageLayerIndex!].removeFromSuperlayer()
                 sectionLayer.addSublayer(imageLayers[imageLayerIndex!])
             }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CircleAnimatedMenu'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Customizable library "CircleAnimatedMenu"'
 
   s.description      = <<-DESC
