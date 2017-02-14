@@ -25,7 +25,6 @@ class ViewController: UIViewController {
 
         testMenu.dataTuple = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
                               ("link", "LinkedIn"), ("googlePlus", "GooglePlus"), ("github", "GitHub")];
-        
     }
 
 }

@@ -12,7 +12,7 @@ import Foundation
     
     // MARK: - Public properties
     
-    // Inner radius of slices - set this to 0 for "no gap".
+    // Inner radius of menu
     @IBInspectable public var innerRadius: CGFloat = 30 {
         didSet {
             var maxInnerRadius = self.frame.size.height > self.frame.size.width - imageSize ?
@@ -22,7 +22,7 @@ import Foundation
         }
     }
     
-    // Outer radius of slices.
+    // Outer radius of menu
     @IBInspectable public var outerRadius: CGFloat = 75 {
         didSet {
             var maxOuterRadius = self.frame.size.height > self.frame.size.width ? self.frame.size.width / 2 : self.frame.size.height / 2
@@ -31,7 +31,7 @@ import Foundation
         }
     }
     
-    // Width of line between slices and central circle
+    // Width of line between sections and central circle
     @IBInspectable public var closerBorderWidth: CGFloat = 2 {
         didSet {
             update()
@@ -108,7 +108,7 @@ import Foundation
         }
     }
     
-    // Duration it takes to slices to expand.
+    // Duration it takes to sections to expand
     public var animDuration: Double = 1.0 {
         didSet {
             update()
@@ -122,49 +122,52 @@ import Foundation
         }
     }
     
-    // Menu width line
+    // Text font size
     @IBInspectable public var titleFontSize: CGFloat = 13 {
         didSet {
             update()
         }
     }
     
-    // image size value
+    // Image size value
     public var imageSize: CGFloat = 30 {
         didSet {
             update()
         }
     }
     
-    // default highlighted section index
+    // Default highlighted section index. Set it if you want to highlight some section at start
     @IBInspectable public var defaulHighlightedtSectionIndex: Int = -1 {
         didSet {
             update()
         }
     }
     
-    // delegate
+    // Delegate
     public weak var delegate: CircleAnimatedMenuDelegate?
     
+    // set animation state. Default - true
     public var animated: Bool = true {
         didSet {
             update()
         }
     }
     
-    // data
+    // Data
     public var dataTuple: [(String, String)] = [] {
         didSet {
             update()
         }
     }
     
-    // you canset highlighted colors array if you want to highlight each section separately
+    // You can set highlighted colors array if you want to highlight each section separately
     public var highlightedColors: [UIColor] = [] {
         didSet {
             update()
         }
     }
+    
+    // MARK: - Privete properties
     
     var sectionLayers: [CAShapeLayer] = []
     var imageLayers: [CALayer] = []
@@ -212,7 +215,6 @@ import Foundation
         setInitialValues()
         
         sectionLayers.removeAll()
-     //   self.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         let center: CGPoint = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         
         // init mainCircleLayer
@@ -225,7 +227,7 @@ import Foundation
         mainCircleLayer.path = mainCirclePath.cgPath
         self.layer.addSublayer(mainCircleLayer)
         
-        // init mask layer to draw border
+        // init borderCircleLayer - mask layer to draw border
         borderCircleLayer = CAShapeLayer()
         let borderCirclePath = UIBezierPath(ovalIn: CGRect(x: center.x - outerRadius, y: center.y - outerRadius,
                                                           width: 2 * outerRadius, height: 2 * outerRadius))
@@ -285,6 +287,7 @@ import Foundation
                 sectionLayer.add(animation, forKey: String(index))
             }
 
+            // change start angle
             startAngle = endAngle
         }
         
@@ -304,6 +307,8 @@ import Foundation
         textLayer.foregroundColor = textColor.cgColor
         textLayer.backgroundColor = innerCircleColor.cgColor
         textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.isWrapped = true
+        textLayer.truncationMode = kCATruncationEnd
         textLayer.string = ""
         
         self.setNeedsLayout()
@@ -482,10 +487,6 @@ import Foundation
 }
 
 extension CircleAnimatedMenu: CAAnimationDelegate {
-    
-    public func animationDidStart(_ anim: CAAnimation) {
-       
-    }
     
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         
