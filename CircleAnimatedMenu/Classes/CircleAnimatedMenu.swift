@@ -87,6 +87,13 @@ import Foundation
         }
     }
     
+    // Sections stroke color
+    @IBInspectable public var sectionsStrokeColor: UIColor = .white {
+        didSet {
+            update()
+        }
+    }
+    
     // Text color
     @IBInspectable public var textColor: UIColor = .white {
         didSet {
@@ -243,7 +250,7 @@ import Foundation
             // init sectionLayer
             var sectionLayer = CAShapeLayer()
             sectionLayer.fillColor = menuFillColor.cgColor
-            sectionLayer.strokeColor = UIColor.blue.cgColor
+            sectionLayer.strokeColor = sectionsStrokeColor.cgColor
             sectionLayer.lineWidth = menuWidthLine
             let path = UIBezierPath()
             path.move(to: center)

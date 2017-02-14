@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         testMenu.outerRadius = 150
         testMenu.innerRadius = 50
         testMenu.closerBorderWidth = 0
+        testMenu.menuWidthLine = 1
         testMenu.delegate = self
         //testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
 

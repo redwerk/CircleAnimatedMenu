@@ -4,12 +4,6 @@
 [![Version](https://img.shields.io/cocoapods/v/CircleAnimatedMenu.svg?style=flat)](http://cocoapods.org/pods/CircleAnimatedMenu)
 [![License](https://img.shields.io/cocoapods/l/CircleMenu.svg?style=flat)](https://https://github.com/redwerk/CircleAnimatedMenu/blob/master/LICENSE)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-![enter image description here](http://i.giphy.com/116ySzTQHWiyCk.gif)
-
 ## Requirements
 
 - iOS 9.0
@@ -96,6 +90,9 @@ func sectionSelected(text: String, index: Int)
 // Border menu color
 @IBInspectable public var farBorderColor: UIColor = .white
 
+// Sections stroke color
+@IBInspectable public var sectionsStrokeColor: UIColor = .white
+
 // Text color
 @IBInspectable public var textColor: UIColor = .white
 
@@ -129,6 +126,12 @@ public var dataTuple: [(String, String)] = []
 // You can set highlighted colors array if you want to highlight each section separately
 public var highlightedColors: [UIColor] = []
 ```
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+![enter image description here](http://i.giphy.com/2cHVF6BulaiC4.gif)
 
 ## License
 
