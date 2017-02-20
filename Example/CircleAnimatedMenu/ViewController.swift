@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         testMenu.innerRadius = 50
         testMenu.closerBorderWidth = 0
         testMenu.menuWidthLine = 1
+        testMenu.titleFont = UIFont.italicSystemFont(ofSize: 12)
         testMenu.delegate = self
         //testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
 

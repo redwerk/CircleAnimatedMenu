@@ -220,6 +220,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = XYDT9KJ5W8;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -521,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A410EDF82C052247D25ED1EE /* Pods-CircleAnimatedMenu_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = XYDT9KJ5W8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -541,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EE03F13452467BD3FDD2634 /* Pods-CircleAnimatedMenu_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = XYDT9KJ5W8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

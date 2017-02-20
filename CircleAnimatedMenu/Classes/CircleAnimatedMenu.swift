@@ -129,8 +129,8 @@ import Foundation
         }
     }
     
-    // Text font size
-    @IBInspectable public var titleFontSize: CGFloat = 13 {
+    // Text font - to set font and font size of text
+    @IBInspectable public var titleFont: UIFont = UIFont.systemFont(ofSize: 13) {
         didSet {
             update()
         }
@@ -309,14 +309,18 @@ import Foundation
         
         // init textLayer - special layer to show text
         textLayer = CATextLayer()
-        textLayer.frame = CGRect(x: center.x - innerRadius + 4, y: center.y - titleFontSize / 2, width: 2 * innerRadius - 8, height: titleFontSize + 4)
-        textLayer.fontSize = titleFontSize
+        textLayer.frame = CGRect(x: center.x - innerRadius + 4, y: center.y - titleFont.pointSize /
+                          2, width: 2 * innerRadius - 8, height: titleFont.pointSize + 4)
+        textLayer.contentsScale = UIScreen.main.scale
         textLayer.foregroundColor = textColor.cgColor
         textLayer.backgroundColor = innerCircleColor.cgColor
         textLayer.alignmentMode = kCAAlignmentCenter
         textLayer.isWrapped = true
         textLayer.truncationMode = kCATruncationEnd
+        textLayer.font = CTFontCreateWithName(titleFont.fontName as CFString?, titleFont.pointSize,  nil)
+        textLayer.fontSize = titleFont.pointSize
         textLayer.string = ""
+        
         
         self.setNeedsLayout()
     }
