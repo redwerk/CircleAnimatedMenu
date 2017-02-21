@@ -35,7 +35,7 @@ pod "CircleAnimatedMenu"
 4) Build array of tuples. Each tuple should contain two String values, first value - image name, second - category text. It can be written in func viewDidLoad.
 
 ```swift
-testMenu.dataTuple = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
+testMenu.tuplesArray = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
 ("link", "LinkedIn"), ("googlePlus", "GooglePlus"), ("github", "GitHub")];
 ```
 5) Set delegate to get index and text selected section.
