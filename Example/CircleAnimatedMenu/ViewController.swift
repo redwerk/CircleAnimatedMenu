@@ -21,12 +21,14 @@ class ViewController: UIViewController {
         testMenu.innerRadius = 50
         testMenu.closerBorderWidth = 0
         testMenu.menuWidthLine = 1
-        testMenu.titleFont = UIFont.italicSystemFont(ofSize: 12)
+        testMenu.titleFont = UIFont.systemFont(ofSize: 12)
         testMenu.delegate = self
         //testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
 
-        testMenu.tuplesArray = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
-                              ("link", "LinkedIn"), ("googlePlus", "GooglePlus"), ("github", "GitHub")];
+        testMenu.tuplesArray = [("Facebook-1", "Facebook"), ("instagram-1", "Instagram"), ("Twitter", "Twitter"),
+                                ("LinkedIn", "LinkedIn"), ("Google Plus +", "GooglePlus"), ("Pinterest", "Pinterest"),
+                                ("RSS", "RSS"), ("YouTube", "YouTube"), ("Bloglovin", "Bloglovin"),
+                                ("Emai", "Email"), ("Flickr", "Flickr"), ("github", "GitHub")]
     }
 
 }

@@ -133,7 +133,7 @@ public var highlightedColors: [UIColor] = []
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-![enter image description here](http://i.giphy.com/2cHVF6BulaiC4.gif)
+![enter image description here](http://i.giphy.com/MVkkFmF29d1EA.gif)
 
 ## License
 
