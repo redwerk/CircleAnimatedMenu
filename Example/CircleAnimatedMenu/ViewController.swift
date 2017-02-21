@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         testMenu.delegate = self
         //testMenu.highlightedColors = [.green, .yellow, .purple, .red, .brown]
 
-        testMenu.dataTuple = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
+        testMenu.tuplesArray = [("facebook", "Facebook"), ("insta", "Instagram"), ("twit", "Twitter"),
                               ("link", "LinkedIn"), ("googlePlus", "GooglePlus"), ("github", "GitHub")];
     }
 

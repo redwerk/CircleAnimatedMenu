@@ -110,8 +110,8 @@ public var animDuration: Double = 1.0
 // Menu width line
 @IBInspectable public var menuWidthLine: CGFloat = 0
 
-// Text font size
-@IBInspectable public var titleFontSize: CGFloat = 13
+// Text font - to set font and font size of text
+@IBInspectable public var titleFont: UIFont = UIFont.systemFont(ofSize: 13)
 
 // Image size value
 public var imageSize: CGFloat = 30
@@ -123,7 +123,7 @@ public var imageSize: CGFloat = 30
 public var animated: Bool = true 
 
 // Data
-public var dataTuple: [(String, String)] = []
+public var tuplesArray: [(String, String)] = []
 
 // You can set highlighted colors array if you want to highlight each section separately
 public var highlightedColors: [UIColor] = []

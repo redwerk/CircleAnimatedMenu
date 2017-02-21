@@ -161,7 +161,7 @@ import Foundation
     }
     
     // Data
-    public var dataTuple: [(String, String)] = [] {
+    public var tuplesArray: [(String, String)] = [] {
         didSet {
             update()
         }
@@ -200,7 +200,7 @@ import Foundation
     
     public init(menuFrame: CGRect, dataArray: [(String, String)]) {
         
-        dataTuple = dataArray
+        tuplesArray = dataArray
         super.init(frame: menuFrame)
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(gestureRecognized(gesture:)))
         self.addGestureRecognizer(gestureRecognizer)
@@ -243,9 +243,9 @@ import Foundation
         borderCircleLayer.strokeColor = UIColor.clear.cgColor
         borderCircleLayer.path = borderCirclePath.cgPath
         
-        let width : CGFloat =  1 / CGFloat(dataTuple.count)
+        let width : CGFloat =  1 / CGFloat(tuplesArray.count)
         let imageRadius = ((outerRadius - innerRadius) / 2) + innerRadius
-        for (index, value) in dataTuple.enumerated() {
+        for (index, value) in tuplesArray.enumerated() {
             
             // init sectionLayer
             let sectionLayer = CAShapeLayer()
@@ -328,7 +328,7 @@ import Foundation
     fileprivate func highlightDefaultSection() {
         let highlightedSecttion = sectionLayers[defaulHighlightedtSectionIndex]
         highlightedSecttion.fillColor = highlightedColor.cgColor
-        textLayer.string = dataTuple[defaulHighlightedtSectionIndex].1
+        textLayer.string = tuplesArray[defaulHighlightedtSectionIndex].1
     }
     
     fileprivate func showSlices() {
@@ -359,7 +359,7 @@ import Foundation
                     shapeLayer.fillColor = highlightedColors[0].cgColor
                 }
                 selectedSectionIndex = currentIndex
-                let currentText = dataTuple[selectedSectionIndex].1
+                let currentText = tuplesArray[selectedSectionIndex].1
                 textLayer.string = currentText
             }
         }
@@ -371,7 +371,7 @@ import Foundation
         super.endTracking(touch, with: event)
         
         clearData()
-        delegate?.sectionSelected(text: dataTuple[selectedSectionIndex].1, index: selectedSectionIndex)
+        delegate?.sectionSelected(text: tuplesArray[selectedSectionIndex].1, index: selectedSectionIndex)
     }
     
     // MARK: - UIPanGestureRecognizer methods
@@ -388,7 +388,7 @@ import Foundation
             
         case .ended:
             clearData()
-            delegate?.sectionSelected(text: dataTuple[selectedSectionIndex].1, index: selectedSectionIndex)
+            delegate?.sectionSelected(text: tuplesArray[selectedSectionIndex].1, index: selectedSectionIndex)
         default:
             print("default")
         }
@@ -405,13 +405,13 @@ import Foundation
                 if !previousIndexes.contains(currentIndex) {
                     selectedSectionIndex = currentIndex
                     previousIndexes.insert(selectedSectionIndex, at: 0)
-                    let currentText = dataTuple[selectedSectionIndex].1
+                    let currentText = tuplesArray[selectedSectionIndex].1
                     textLayer.string = currentText
                 } else {
                     let previousIndex = previousIndexes.index(of: currentIndex)
                     if previousIndex == 1 {
                         selectedSectionIndex = currentIndex
-                        let currentText = dataTuple[selectedSectionIndex].1
+                        let currentText = tuplesArray[selectedSectionIndex].1
                         textLayer.string = currentText
                         let firstElement = previousIndexes.first
                         previousIndexes.removeAll()
