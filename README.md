@@ -4,6 +4,8 @@
 [![Version](https://img.shields.io/cocoapods/v/CircleAnimatedMenu.svg?style=flat)](http://cocoapods.org/pods/CircleAnimatedMenu)
 [![License](https://img.shields.io/cocoapods/l/CircleMenu.svg?style=flat)](https://https://github.com/redwerk/CircleAnimatedMenu/blob/master/LICENSE)
 
+![enter image description here](http://i1024.photobucket.com/albums/y307/sanya_av13/circleMenuImage_zps18ttsetz.png)
+
 `CircleAnimatedMenu` - convenient customizable menu which can be used to show and select different categories. Selection can be done by sliding around the center of menu or just by tapping at section.
 
 ## Requirements
